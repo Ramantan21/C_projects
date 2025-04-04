@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+a=`expr 3 + 5`; echo $a      # 8           
+a=`expr 5 % 3`; echo $a      # 2           
+a=`expr 5 / 3`; echo $a      # 1           
+# a=`expr 1 / 0` # Epistrefei sfalma           
+a=`expr 5 \* 3`; echo $a     # 15           
+# Me to expr, ston pollaplasiasmo \* 
+a=`expr $a + 5`; echo $a # Idio me let a=a+5           
+
+let a=a+1; echo $a  #21
+let a=$a+2; echo $a  #23
+
+
+a=a+2;  echo $a  #this is a string a+2; will echo a+2
+

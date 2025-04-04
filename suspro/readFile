@@ -1,0 +1,11 @@
+#!/bin/bash
+exec < "$1" #Take input from this file
+
+while read line
+  do
+  echo $line
+  done
+
+echo "All done with this file!"
+
+exit 0

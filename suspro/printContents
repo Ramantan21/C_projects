@@ -1,0 +1,26 @@
+#!/bin/bash
+# Loads this script into an array.
+
+text=( $(cat "$0") )
+
+echo ${text}
+echo " "; echo " "; echo "*****";
+
+for ((i=0; i <= ${#text[@]} - 1; i++))
+do
+        # ${#text[@]} 
+        # gives number of elements in the array
+	# prints on a single line each field separated by "..."
+	echo -n "${text[$i]}"
+	echo -n " ... " 
+done
+echo " "; echo " ";  echo "*****";
+
+for i in `cat "${0}"`
+do
+	#each field of the script separated by "...."
+	echo -n "${i}"
+	echo -n " .... " 
+done
+echo " "; echo " ";  echo "*****";
+

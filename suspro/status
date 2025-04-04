@@ -1,0 +1,13 @@
+WIFEXITED(STATUS):returns true if the child terminated normally
+WEXITSTATUS(status):returs the exit status of the child.This constists of the 8 bits of the status argument that the child specified
+in an exit() call or as the argument for a return statement in main.Μπορουμε να την χρησιμοποιησουμε μονο αν το WIFEXITED ειναι true.
+
+
+WIFSIGNALED:returns true if the child process was terminated by a signal
+WTERMSIG:returns the number of the signal that cause the child process to terminate.χρησιμοποιησουμε μονο αν το WIFSIGNALED ειναι true
+
+WCOREDUMP:returns true if the child produced a core dump
+WIFSTOPPED:returns true if the child process has not terminated,but has stopped and can be restarted.
+
+
+WSTPOSIG:returns the number of the signal which caused the child to stop.This macro should ONLY be used if WIFSTOPPED is true.
