@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
         sigaction(SIGUSR1, &sa, NULL);
         
         printf("What is the result of 3 x 5?: ");
-        scanf("%d\n",&x);
+        scanf("%d",&x);
         if(x==15){
             printf("right!");
         }else{
