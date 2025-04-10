@@ -1,36 +1,20 @@
-Moving Average Calculator
-A simple C program that calculates the moving average of numbers from a given input file.
+# Moving Average Calculator
 
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-Features
-Calculates the moving average of a sequence of numbers
+A high-performance moving average calculator implemented in C with configurable window size.
 
-Configurable window size (default: 50)
+## Features
 
-Handles invalid input cases with appropriate error messages
+- Efficient circular buffer implementation
+- Configurable window size (default: 50)
+- Robust error handling
+- Memory efficient (O(n) space complexity)
+- Handles large files efficiently
 
-Memory efficient implementation using circular buffer
+## Build & Usage
 
-Usage
-
-./moving_avg <filename> [--window N]
-
-
-Build
-Compile with any standard C compiler:
-
-gcc moving_avg.c -o moving_avg
-
-
-Error Handling
-The program provides descriptive error messages for:
-
-Missing or invalid arguments
-
-File not found
-
-Invalid window size
-
-Window size larger than data points
-
-Memory allocation failures
+### Compilation
+```bash
+make
