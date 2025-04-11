@@ -34,7 +34,7 @@ text
 104.56  # Day 3
 ...
 175.89  # Day 100
-🚀 Usage
+## 🚀 Usage
 Basic Analysis
 
 # Default 50-day window
