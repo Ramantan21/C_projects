@@ -28,7 +28,7 @@ cd RollingStats
 make
 📊 Sample Dataset
 text
-Copy
+
 102.34  # Day 1
 103.12  # Day 2
 104.56  # Day 3
@@ -36,8 +36,7 @@ Copy
 175.89  # Day 100
 🚀 Usage
 Basic Analysis
-bash
-Copy
+
 # Default 50-day window
 ./rolling_stats data.txt
 
@@ -61,7 +60,7 @@ for window in 10 20 50; do
   ./rolling_stats data.txt --window $window > ma_$window.csv
 done
 Error Handling
-bash
+
 
 $ ./rolling_stats missing.txt
 Error: File 'missing.txt' not found
