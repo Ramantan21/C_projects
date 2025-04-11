@@ -26,6 +26,7 @@ A high-performance tool for calculating moving averages of financial time series
 git clone https://github.com/yourusername/RollingStats.git
 cd RollingStats
 make
+```bash
 📊 Sample Dataset
 text
 
@@ -34,6 +35,7 @@ text
 104.56  # Day 3
 ...
 175.89  # Day 100
+```
 ## 🚀 Usage
 Basic Analysis
 
@@ -52,9 +54,11 @@ Calculating moving averages...
 50-Day SMA: 143.12
 -----------------------------
 Processed 200 points in 0.58ms
-⚙ Advanced Usage
+
+## ⚙ Advanced Usage
+```bash
 Batch Processing
-bash
+
 
 for window in 10 20 50; do
   ./rolling_stats data.txt --window $window > ma_$window.csv
@@ -73,7 +77,7 @@ Max Window Size	1,000 periods
 Data Format	One value per line
 Memory Usage	O(window_size)
 Precision	64-bit floating point
-
+```bash
 🤝 Contributing
 Fork the repository
 
