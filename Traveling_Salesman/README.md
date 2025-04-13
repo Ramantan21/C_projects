@@ -14,13 +14,14 @@ An optimized C implementation for solving the Traveling Salesman Problem (TSP) u
 ## 🏗️ Compilation & Usage
 
 ## Compilation
-
+```bash
 gcc -o Solver Solver.c -O3
+```
 
 ## 🚀 Execution
 ```bash
 ./Solver input_file.txt
-
+```
 
 ## 🤝 Contributing
 ```bash
