@@ -29,7 +29,7 @@ make
 
 📊 Sample Dataset
 text
-
+```bash
 102.34  # Day 1
 103.12  # Day 2
 104.56  # Day 3
