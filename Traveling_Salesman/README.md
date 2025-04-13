@@ -23,9 +23,6 @@ gcc -o Solver Solver.c -O3
 ./Solver input_file.txt
 ```
 
-## 🤝 Contributing
+## 🤝 How to Contribute
 ```bash
-Pull requests welcome! Please ensure:
-- **Code follows existing style
-- **New features include tests
-- **documentation is updated
+Pull requests welcome!
