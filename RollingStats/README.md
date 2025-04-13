@@ -22,22 +22,27 @@ A high-performance tool for calculating moving averages of financial time series
 
 ## 🛠 Installation
 
-```bash
+
 git clone https://github.com/yourusername/RollingStats.git
 cd RollingStats
 make
+<<<<<<< HEAD
 ## 📊 Sample Dataset
+=======
+
+📊 Sample Dataset
+>>>>>>> 5de326c81ae384a94340e4aaf4878827ffa55eb6
 text
-Copy
+```bash
 102.34  # Day 1
 103.12  # Day 2
 104.56  # Day 3
 ...
 175.89  # Day 100
-🚀 Usage
+
+## 🚀 Usage
 Basic Analysis
-bash
-Copy
+
 # Default 50-day window
 ./rolling_stats data.txt
 
@@ -53,15 +58,17 @@ Calculating moving averages...
 50-Day SMA: 143.12
 -----------------------------
 Processed 200 points in 0.58ms
-⚙ Advanced Usage
+
+## ⚙ Advanced Usage
+
 Batch Processing
-bash
+
 
 for window in 10 20 50; do
   ./rolling_stats data.txt --window $window > ma_$window.csv
 done
 Error Handling
-bash
+
 
 $ ./rolling_stats missing.txt
 Error: File 'missing.txt' not found
