@@ -26,7 +26,7 @@ A high-performance tool for calculating moving averages of financial time series
 git clone https://github.com/yourusername/RollingStats.git
 cd RollingStats
 make
-📊 Sample Dataset
+## 📊 Sample Dataset
 text
 Copy
 102.34  # Day 1
