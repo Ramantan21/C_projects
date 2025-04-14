@@ -1,0 +1,8 @@
+[2025-04-14 21:55:41] command add /home/user/docs /backup/docs
+[2025-04-14 21:55:52] command add 
+[2025-04-14 21:55:52] Error whatching dir: Invalid argument
+
+[2025-04-14 21:56:10] command add /home/ramantan21/hw1-Ramantan21-1/src /home/ramantan21/hw1-Ramantan21-1/tmp
+[2025-04-14 21:56:16] command sync
+[2025-04-14 21:56:16] Error whatching dir: Invalid argument
+
