@@ -1,5 +1,5 @@
 # Members
-@Ramantan21,@alexshuli,   
+@Ramantan21,@alexshuli,@greentooth10   
     
 # Μορφή του B+ δέντρου με βάση το επίπεδο Block File 
     Γενικά ένα B+ δέντρο αποτελείται απο data nodes  στα φύλλα του δέντρού που αποθηκέυουν εγγραφές και απο index nodes στο εσωτερικό του δέντρου που αποθηκέυουν ζέυγη κλειδιών και δεικτών σε κατωτερά index/data nodes.
