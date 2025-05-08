@@ -13,9 +13,9 @@ void child_server(int newsock);
 void perror_exit(char *message);
 void sigchld_handler(int sig);
 
-void main(int argc,char *argv[]){
+void main(int argc, char *argv[]){
     int port,sock,newsock;
-    struct sockaddr_in server,client;
+    struct sockaddr_in server, client;
     socklen_t clientlen;
     struct sockaddr *serverptr = (struct sockaddr*)&server;
     struct sockaddr *clientptr = (struct sockaddr*)&client;
@@ -26,32 +26,33 @@ void main(int argc,char *argv[]){
     }
     port = atoi(argv[1]);
     signal(SIGCHLD,sigchld_handler);
-    if(sock = socket(AF_INET,SOCK_STREAM,0) < 0) perror_exit("socket");
 
-    server.sin_family = AF_INET;
-    server.sin_port = htons(port);
+    if((sock = socket(AF_INET,SOCK_STREAM,0)) < 0) perror_exit("socket"); //create a new socket with sock()
+
+    server.sin_family = AF_INET; //internet domain
     server.sin_addr.s_addr = htonl(INADDR_ANY);
-    if(bind(sock,serverptr,sizeof(server)) < 0) perror_exit("bind");
+    server.sin_port = htons(port);//the given port
+    if(bind(sock,serverptr,sizeof(server)) < 0) perror_exit("bind"); //bind to socket to adress
 
-    if(listen(sock,5) < 0 ) perror_exit("listen");
-    printf("Listening for connections to port: %d\n",port);
+    if(listen(sock,5) < 0) perror_exit("listen");//listen for connections
+    printf("Listening for connections to port %d\n",port);
     while(1){
         clientlen = sizeof(client);
-        if((newsock = accept(sock,clientptr,&clientlen)) < 0) perror_exit("accept");
+        if((newsock = accept(sock,clientptr,&clientlen)) < 0) perror_exit("accept"); //accept connection
 
-        if((rem = gethostbyaddr((char *)&client.sin_addr.s_addr,sizeof(client.sin_addr.s_addr),client.sin_family)) == NULL){
+        if((rem = gethostbyaddr((char *)&client.sin_addr.s_addr,sizeof(client.sin_addr.s_addr),client.sin_family)) == NULL){//find clients name
             herror("gethostbyaddr");
-            exit(2);
+            exit(1);
         }
         printf("Accepted connection from %s\n",rem->h_name);
-        switch(fork()){
-            case -1:
-                perror_exit("fork failed");
-                break;
-            case 0: //chld process
-                close(sock);
-                child_server(newsock);
-                exit(3);
+        switch (fork()){ //create a chld process
+        case -1:
+            perror("fork failed");
+            break;
+        case 0: // chld process
+            close(sock);
+            child_server(newsock);
+            exit(0);
         }
         close(newsock); //parent process closes socket to client
     }
@@ -62,10 +63,10 @@ void child_server(int newsock){
     while(read(newsock,buf,1) > 0){
         putchar(buf[0]);
         buf[0] = toupper(buf[0]);
-        if(write(newsock,buf,1) < 0 ) perror_exit("write");
+        if(write(newsock,buf,1) < 0) perror("write");
     }
-    printf("Closing connection");
-    close(newsock);
+    printf("Closing connection.\n");
+    close(newsock); 
 }
 
 void sigchld_handler(int sig){
